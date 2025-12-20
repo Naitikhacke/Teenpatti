@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teen Patti Ledger</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header / Pot Section -->
+        <header class="game-header">
+            <h1 class="app-title">♠️ Teen Patti Ledger ♦️</h1>
+            <div class="pot-display-container">
+                <div class="pot-label">Current Pot</div>
+                <div class="pot-amount" id="currentPot">₹0</div>
+            </div>
+        </header>
+
+        <!-- Game Controls -->
+        <section class="controls-section">
+            <div class="boot-control">
+                <label for="bootAmount">Boot Amount</label>
+                <div class="input-group">
+                    <button class="btn-micro" onclick="adjustBoot(-10)">-</button>
+                    <input type="number" id="bootAmount" value="50">
+                    <button class="btn-micro" onclick="adjustBoot(10)">+</button>
+                </div>
+            </div>
+            <div class="round-actions">
+                <button class="btn-primary" onclick="newRound()">New Round</button>
+                <button class="btn-danger" onclick="confirmResetGame()">Reset All</button>
+            </div>
+        </section>
+
+        <!-- Players Grid -->
+        <section class="players-section" id="playersGrid">
+            <!-- Player cards will be injected here JS -->
+        </section>
+
+        <!-- Search/Add Player -->
+        <div class="add-player-section">
+            <input type="text" id="newPlayerName" placeholder="Player Name...">
+            <button class="btn-secondary" onclick="addNewPlayer()">+ Add Player</button>
+        </div>
+
+        <!-- Stats Table -->
+        <section class="stats-section">
+            <h2>Live Ledger</h2>
+            <div class="table-responsive">
+                <table class="ledger-table">
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Balance</th>
+                            <th>Added</th>
+                            <th>Paid</th>
+                            <th>Won</th>
+                            <th>Net</th>
+                        </tr>
+                    </thead>
+                    <tbody id="statsTableBody">
+                        <!-- Rows injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modals / Overlays could go here -->
+
+    <script src="script.js"></script>
+</body>
+</html>

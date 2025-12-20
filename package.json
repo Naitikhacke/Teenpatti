@@ -1,0 +1,11 @@
+{
+  "name": "teen-patti-ledger",
+  "version": "1.0.0",
+  "description": "Simple Teen Patti Accounting",
+  "scripts": {
+    "dev": "http-server . -c-1 -a localhost -p 3000 -o"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
